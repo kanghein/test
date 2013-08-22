@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>test04</title>
+<link href="http://cdn.sencha.io/touch/sencha-touch-2.2.1/resources/css/sencha-touch.css" rel="stylesheet" />
+<script src="http://cdn.sencha.io/touch/sencha-touch-2.2.1/sencha-touch-all.js"></script>
+<script type="text/javascript">
+
+var stpl = new Ext.XTemplate(
+	"<tpl for='.'>",
+		"<tpl for='.'>",
+         		"<table width='100%' border='1'>",
+					"<tr>",
+						"<td width='10%'>{'GUBUN'}</td>",
+						"<td width='10%'>{'GUBUN_NAME'}</td>",
+						"<td width='10%'>{'CUST_NAME'}</td>",
+						"<td width='10%'>{'TARGET_NAME'}</td>",
+						"<td width='10%'>{'STANDARD'}</td>",
+						"<td width='10%'>{'GO_TARGET_CNT'}</td>",
+						"<td width='10%'>{'TARGET_WAIT_CNT'}</td>",
+						"<td width='10%'>{'GO_FACTORY_CNT'}</td>",
+						"<td width='10%'>{'SALES_OWNER'}</td>",
+						"<td width='10%'>{'SALES_NAME'}</td>",
+					"</tr>",
+				"</table>",
+			"</tpl>",
+	"</tpl>"
+);    
+
+
+ Ext.setup({
+         onReady: function() {                                       
+                  var rootPanel = new Ext.Panel({
+                           fullscreen: true,
+                           scroll : 'vertical',
+                           tpl : stpl,
+                           items : [
+									{
+										id : "title", xtype : "titlebar",
+										title : "차량 현황", docked : "top"
+									}
+						   ]
+         		  });
+         		  
+         		  templeList =  [
+				                  {   GUBUN: "1"
+				                  	, GUBUN_NAME: "132131"
+				                  	, CUST_NAME: "5555"
+				                  	, TARGET_NAME: "555" 
+				                  	, STANDARD: "11111"
+				                  	, GO_TARGET_CNT: "1233"
+				                  	, TARGET_WAIT_CNT: "1234"
+				                  	, GO_FACTORY_CNT: "1234"
+				                  	, SALES_OWNER: "9999"
+				                  	, SALES_NAME: "0000"
+				                  } ,
+				                  {   GUBUN: "2"
+				                  	, GUBUN_NAME: "132131"
+				                  	, CUST_NAME: "5555"
+				                  	, TARGET_NAME: "555" 
+				                  	, STANDARD: "11111"
+				                  	, GO_TARGET_CNT: "1233"
+				                  	, TARGET_WAIT_CNT: "1234"
+				                  	, GO_FACTORY_CNT: "1234"
+				                  	, SALES_OWNER: "9999"
+				                  	, SALES_NAME: "0000"
+				                  }
+				        		];
+				  templeHeader =   {   GUBUN: "채널코드"
+				                  	, GUBUN_NAME: "채널"
+				                  	, CUST_NAME: "현장1"
+				                  	, TARGET_NAME: "현장2" 
+				                  	, STANDARD: "규격"
+				                  	, GO_TARGET_CNT: "현장행"
+				                  	, TARGET_WAIT_CNT: "현장대기"
+				                  	, GO_FACTORY_CNT: "사업소행"
+				                  	, SALES_OWNER: "OWNER"
+				                  	, SALES_NAME: "담당영업"
+				                  };
+				  
+				  
+				  templeView = [ Ext.create("Ext.Spacer"),
+				  				 Ext.create("Ext.Spacer"),
+				  				 Ext.create("Ext.Spacer"),
+				  				 //여백 ( 하얗게 나오는방법은 모르겠음)
+				  				 templeHeader, templeList];
+         		  
+         		  rootPanel.updateData(templeView);
+         		  
+         		  
+         }
+});
+ </script> 
+</head>
+<body>
+	
+	테스트중입니다 - 해인
+</body>
